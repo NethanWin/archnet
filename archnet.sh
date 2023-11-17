@@ -2,7 +2,7 @@
 # https://forums.bunsenlabs.org/viewtopic.php?id=7571
 # https://www.reddit.com/r/suckless/comments/jj61py/how_do_i_make_dwm_appear_on_my_display_manager/
 sudo pacman -Syyu 
-sudo pacman -S base-devel git libx11 libxft xorg-server xorg-xinit terminus-font
+sudo pacman -S base-devel git libx11 libxft xorg-server xorg-xinit terminus-font -y
 mkdir -p ~/.local/src 
 
 # clone projects
