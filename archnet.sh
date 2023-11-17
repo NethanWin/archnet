@@ -25,18 +25,17 @@ sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
 make clean
 sudo make install
 
-# # dwm
-# cd ~/.local/src/dwm
-# sed -i 's/^XINERAMALIBS/# XINERAMALIBS  = -lXinerama/' config.mk
-# sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
-# make clean
-# sudo make install
+# dwm
+cd ~/.local/src/dwm
+sed -i 's/^XINERAMALIBS/# XINERAMALIBS  = -lXinerama/' config.mk
+sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
+make clean
+sudo make install
 
-# sudo echo "[Desktop Entry]
-# Encoding=UTF-8
-# Name=dwm
-# Comment=Dynamic window manager
-# Exec=dwm
-# Icon=dwm
-# Type=XSession" > /usr/share/xsessions/dwm.desktop
-
+sudo sh -c 'echo "[Desktop Entry]
+Encoding=UTF-8
+Name=dwm
+Comment=Dynamic window manager
+Exec=dwm
+Icon=dwm
+Type=XSession" > /usr/share/xsessions/dwm.desktop'
