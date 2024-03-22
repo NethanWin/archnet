@@ -32,10 +32,6 @@ sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
 make clean
 sudo make install
 
-sudo sh -c 'echo "[Desktop Entry]
-Encoding=UTF-8
-
-
 
 sudo pacman -S lighdm lightdm-gtk-greeter
 sudo systemctl enable lightdm
@@ -48,6 +44,9 @@ sudo systemctl start lightdm
 
 sudo mkdir /usr/share/xsessions
 sudo touch /use/share/xsessions/dwm.desktop
+
+sudo sh -c 'echo "[Desktop Entry]
+Encoding=UTF-8
 Name=dwm
 Comment=Dynamic window manager
 Exec=dwm
