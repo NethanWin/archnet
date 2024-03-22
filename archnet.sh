@@ -34,6 +34,17 @@ sudo make install
 
 sudo sh -c 'echo "[Desktop Entry]
 Encoding=UTF-8
+
+
+
+
+
+# virt-manager
+
+
+
+#sudo systemctl start libvirtd
+
 Name=dwm
 Comment=Dynamic window manager
 Exec=dwm
