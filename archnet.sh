@@ -37,16 +37,28 @@ Encoding=UTF-8
 
 
 
-
+sudo pacman -S lighdm lightdm-gtk-greeter
+sudo systemctl enable lightdm
+sudo systemctl start lightdm
 
 # virt-manager
-
-
-
 #sudo systemctl start libvirtd
 
+
+
+sudo mkdir /usr/share/xsessions
+sudo touch /use/share/xsessions/dwm.desktop
 Name=dwm
 Comment=Dynamic window manager
 Exec=dwm
 Icon=dwm
 Type=XSession" > /usr/share/xsessions/dwm.desktop'
+
+
+
+
+
+# just some pkgs
+sudo pacman -S neovim qbittorrent syncthing timeshift virt-manager tldr bluez bluez-utils xclip yt-dlp vlc xterm mpv libreoffice neofetch htop gdu mc nnn zip zoxide cups system-config-printer
+
+
