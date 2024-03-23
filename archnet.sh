@@ -32,7 +32,7 @@ sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
 make clean
 sudo make install
 
-
+# lightdm greeter
 sudo pacman -S lighdm lightdm-gtk-greeter
 sudo systemctl enable lightdm
 sudo systemctl start lightdm
@@ -58,6 +58,11 @@ Type=XSession" > /usr/share/xsessions/dwm.desktop'
 
 
 # just some pkgs
-sudo pacman -S neovim qbittorrent syncthing timeshift virt-manager tldr bluez bluez-utils xclip yt-dlp vlc xterm mpv libreoffice neofetch htop gdu mc nnn zip zoxide cups system-config-printer
+sudo pacman -S gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager tldr bluez bluez-utils xclip yt-dlp vlc xterm mpv libreoffice neofetch htop gdu mc nnn zip zoxide cups system-config-printer
 
+# yay (AUR)
+pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 
