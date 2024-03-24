@@ -66,3 +66,10 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
+
+
+# pacman -S iwd
+# sudo systemctl start iwd
+#iwctl
+# station wlan0 get-networks
+# station wlan0 connect "oneplus"
