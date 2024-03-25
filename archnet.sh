@@ -66,9 +66,9 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
+# lazyvim
 # required
 mv ~/.config/nvim{,.bak}
-
 # optional but recommended
 mv ~/.local/share/nvim{,.bak}
 mv ~/.local/state/nvim{,.bak}
