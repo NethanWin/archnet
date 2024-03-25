@@ -76,6 +76,26 @@ mv ~/.cache/nvim{,.bak}
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
+# syncthing service
+cat << EOF > ~/.config/systemd/user/syncthing.service
+[Unit]
+Description=Syncthing - Open Source Continuous File Synchronization
+Documentation=https://docs.syncthing.net/
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/syncthing -no-browser -no-restart -logflags=0
+Restart=on-failure
+SuccessExitStatus=3 4
+RestartForceExitStatus=3 4
+
+[Install]
+WantedBy=default.target
+EOF
+
+sudo systemctl --user enable syncthing
+sudo systemctl --user start syncthing
+
 
 
 
