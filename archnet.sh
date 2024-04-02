@@ -97,7 +97,7 @@ sudo systemctl --user enable syncthing
 sudo systemctl --user start syncthing
 
 
-
+yay -S bicon-git
 
 # pacman -S iwd
 # sudo systemctl start iwd
