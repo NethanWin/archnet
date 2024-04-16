@@ -1,14 +1,15 @@
 # dwm
 # https://forums.bunsenlabs.org/viewtopic.php?id=7571
 # https://www.reddit.com/r/suckless/comments/jj61py/how_do_i_make_dwm_appear_on_my_display_manager/
-sudo pacman -Syyu 
+sudo pacman -Syyu
 sudo pacman -S --noconfirm base-devel git libx11 libxft xorg-server xorg-xinit terminus-font
-mkdir -p ~/.local/src 
+mkdir -p ~/.local/src
 
 # clone projects
-git clone git://git.suckless.org/st ~/.local/src/st
-git clone git://git.suckless.org/dmenu ~/.local/src/dmenu
-git clone git://git.suckless.org/dwm ~/.local/src/dwm
+git clone https://github.com/NethanWin/st.git ~/.local/src/st
+git clone https://github.com/NethanWin/dwm.git ~/.local/src/dwm
+git clone https://github.com/NethanWin/dmenu.git ~/.local/src/dmenu
+git clone https://github.com/NethanWin/dwmblocks.git ~/.local/src/dwmblocks
 
 # st
 cd ~/.local/src/st
@@ -17,7 +18,6 @@ sudo make install
 
 # dmenu
 cd ~/.local/src/dmenu
-
 
 sed -i 's/^XINERAMALIBS/# XINERAMALIBS  = -lXinerama/' config.mk
 sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
@@ -40,8 +40,6 @@ sudo systemctl start lightdm
 # virt-manager
 #sudo systemctl start libvirtd
 
-
-
 sudo mkdir /usr/share/xsessions
 sudo touch /use/share/xsessions/dwm.desktop
 
@@ -52,10 +50,6 @@ Comment=Dynamic window manager
 Exec=dwm
 Icon=dwm
 Type=XSession" > /usr/share/xsessions/dwm.desktop'
-
-
-
-
 
 # just some pkgs
 sudo pacman -S reflector upower gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager tldr bluez bluez-utils xclip yt-dlp vlc xterm mpv libreoffice neofetch htop gdu mc nnn zip zoxide cups system-config-printer
@@ -77,7 +71,7 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 # syncthing service
-cat << EOF > ~/.config/systemd/user/syncthing.service
+cat <<EOF >~/.config/systemd/user/syncthing.service
 [Unit]
 Description=Syncthing - Open Source Continuous File Synchronization
 Documentation=https://docs.syncthing.net/
@@ -96,12 +90,10 @@ EOF
 sudo systemctl --user enable syncthing
 sudo systemctl --user start syncthing
 
-
 yay -S bicon-git
 
 #pacman mirrors
 sudo reflector --country Israel --latest 5 --age 2 --sort rate --save /etc/pacman.d/mirrorlist
-
 
 # pacman -S iwd
 # sudo systemctl start iwd
