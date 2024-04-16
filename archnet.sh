@@ -52,7 +52,7 @@ Icon=dwm
 Type=XSession" > /usr/share/xsessions/dwm.desktop'
 
 # just some pkgs
-sudo pacman -S reflector upower gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager tldr bluez bluez-utils xclip yt-dlp vlc xterm mpv libreoffice neofetch htop gdu mc nnn zip zoxide cups system-config-printer
+sudo pacman -S unzip qutebrowser reflector upower gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager tldr bluez bluez-utils xclip yt-dlp vlc xterm mpv libreoffice neofetch htop gdu mc nnn zip zoxide cups system-config-printer
 
 # yay (AUR)
 pacman -S --needed git base-devel
