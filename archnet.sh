@@ -18,10 +18,8 @@ sudo make install
 
 # dmenu
 cd ~/.local/src/dmenu
-
 sed -i 's/^XINERAMALIBS/# XINERAMALIBS  = -lXinerama/' config.mk
 sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
-
 make clean
 sudo make install
 
@@ -31,11 +29,6 @@ sed -i 's/^XINERAMALIBS/# XINERAMALIBS  = -lXinerama/' config.mk
 sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
 make clean
 sudo make install
-
-# lightdm greeter
-sudo pacman -S lighdm lightdm-gtk-greeter
-sudo systemctl enable lightdm
-sudo systemctl start lightdm
 
 # virt-manager
 #sudo systemctl start libvirtd
@@ -52,7 +45,12 @@ Icon=dwm
 Type=XSession" > /usr/share/xsessions/dwm.desktop'
 
 # just some pkgs
-sudo pacman -S unzip qutebrowser reflector upower gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager tldr bluez bluez-utils xclip yt-dlp vlc xterm mpv libreoffice neofetch htop gdu mc nnn zip zoxide cups system-config-printer
+# utilities
+sudo pacman -S zip unzip reflector upower tldr bluez bluez-utils xclip yt-dlp zoxide fastfetch cups
+# gui
+sudo pacman -S qutebrowser gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager vlc libreoffice system-config-printer
+# tui
+sudo pacman -S mpv dua-cli btop mc
 
 # yay (AUR)
 pacman -S --needed git base-devel
@@ -92,11 +90,91 @@ sudo systemctl --user start syncthing
 
 yay -S bicon-git
 
-#pacman mirrors
-sudo reflector --country Israel --latest 5 --age 2 --sort rate --save /etc/pacman.d/mirrorlist
-
-# pacman -S iwd
-# sudo systemctl start iwd
-#iwctl
-# station wlan0 get-networks
-# station wlan0 connect "oneplus"
+# to add:
+# auto usb mount to /run/media/
+# android-tools
+# auto-cpufreq
+# bluetooth setup
+# breeze
+# btop
+# calc
+# cups
+# dash
+# dua-cli
+# duf
+# fastfetch
+# feh
+# ffmpeg
+# fish
+# fzf
+# git
+# go
+# hyprland
+# hyprlock
+# hyprfine
+# hyprpaper
+# imagemagick
+# iwd
+# kdenlive
+# kolourpaint
+# konsole
+# mc
+# ly
+# mc
+# mpv
+# neovim
+# newsboat
+# npm
+# nvidia-driver
+# obsidian
+# tmux
+# zoxide
+# zip
+# zathura???
+# yt-dlp
+# youtube-dl
+# yay
+# wofi
+# wl-clipboard??
+# wine
+# waybar
+# vlc
+# virt-manager setup
+# usb-modeswitch
+# unzip
+# unrar
+# rar
+# ttf-jetbrains-mono-nerd
+# ttf-ubuntu-mono-nerd
+# tlp?
+# timeshift
+# tldr
+# run tldr --update
+# tilix?
+# syncthing
+# sxiv
+# speedtest-cli
+# slurp??
+# samba??
+# reglector?
+# qutebrowser
+# librewolf
+# rustup
+# qt5ct??
+# qt6ct??
+# qbittorrent
+# p7zip
+# pacutils
+# pamixer
+# pavucontrol?
+# pipewire??
+# print-manager??
+# pulseaudio??
+# python-adblock
+# python-pip
+# python-pipx
+#
+#
+#
+# mirrors with reflector like the next but with israeli and up to date servers
+# sudo reflector --country Israel --latest 5 --age 2 --sort rate --save /etc/pacman.d/mirrorlist

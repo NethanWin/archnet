@@ -1,6 +1,6 @@
 # ArchNet
 auto install arch
-1. install arch
+1. install arch (or archinstall)
 2. reboot
 3.
 4. pacman -S git
