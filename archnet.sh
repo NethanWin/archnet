@@ -1,13 +1,13 @@
 # just some pkgs
 # utilities
-sudo pacman -S zip unzip reflector upower tldr bluez bluez-utils xclip yt-dlp zoxide fastfetch cups
+sudo pacman -S --noconfirm --needed zip unzip reflector upower tldr bluez bluez-utils xclip yt-dlp zoxide fastfetch cups speedtest-cli
 # gui
-sudo pacman -S qutebrowser gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager vlc libreoffice system-config-printer
+sudo pacman -S --noconfirm --needed qutebrowser gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager vlc libreoffice system-config-printer
 # tui
-sudo pacman -S mpv dua-cli btop mc
+sudo pacman -S --noconfirm --needed mpv dua-cli btop mc
 
 # yay (AUR)
-pacman -S --needed git base-devel
+pacman -S --noconfirm --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -105,10 +105,6 @@ yay -S bicon-git
 # tldr
 # run tldr --update
 # tilix?
-# syncthing
-# sxiv
-# speedtest-cli
-# slurp??
 # samba??
 # reglector?
 # qutebrowser
