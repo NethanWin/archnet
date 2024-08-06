@@ -1,49 +1,3 @@
-# dwm
-# https://forums.bunsenlabs.org/viewtopic.php?id=7571
-# https://www.reddit.com/r/suckless/comments/jj61py/how_do_i_make_dwm_appear_on_my_display_manager/
-sudo pacman -Syyu
-sudo pacman -S --noconfirm base-devel git libx11 libxft xorg-server xorg-xinit terminus-font
-mkdir -p ~/.local/src
-
-# clone projects
-git clone https://github.com/NethanWin/st.git ~/.local/src/st
-git clone https://github.com/NethanWin/dwm.git ~/.local/src/dwm
-git clone https://github.com/NethanWin/dmenu.git ~/.local/src/dmenu
-git clone https://github.com/NethanWin/dwmblocks.git ~/.local/src/dwmblocks
-
-# st
-cd ~/.local/src/st
-make clean
-sudo make install
-
-# dmenu
-cd ~/.local/src/dmenu
-sed -i 's/^XINERAMALIBS/# XINERAMALIBS  = -lXinerama/' config.mk
-sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
-make clean
-sudo make install
-
-# dwm
-cd ~/.local/src/dwm
-sed -i 's/^XINERAMALIBS/# XINERAMALIBS  = -lXinerama/' config.mk
-sed -i 's/^XINERAMAFLAGS/# XINERAMAFLAGS = -DXINERAMA/' config.mk
-make clean
-sudo make install
-
-# virt-manager
-#sudo systemctl start libvirtd
-
-sudo mkdir /usr/share/xsessions
-sudo touch /use/share/xsessions/dwm.desktop
-
-sudo sh -c 'echo "[Desktop Entry]
-Encoding=UTF-8
-Name=dwm
-Comment=Dynamic window manager
-Exec=dwm
-Icon=dwm
-Type=XSession" > /usr/share/xsessions/dwm.desktop'
-
 # just some pkgs
 # utilities
 sudo pacman -S zip unzip reflector upower tldr bluez bluez-utils xclip yt-dlp zoxide fastfetch cups
@@ -172,7 +126,6 @@ yay -S bicon-git
 # pulseaudio??
 # python-adblock
 # python-pip
-# python-pipx
 #
 #
 #
