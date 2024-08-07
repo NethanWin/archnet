@@ -1,0 +1,61 @@
+# auto usb mount to /run/media/
+# android-tools
+# auto-cpufreq
+# bluetooth setup
+# breeze
+# hyprland
+# hyprlock
+# hyprfine
+# hyprpaper
+# imagemagick
+# iwd
+# kdenlive
+# kolourpaint
+# konsole
+# mc
+# ly
+# mc
+# mpv
+# neovim
+# newsboat
+# npm
+# nvidia-driver
+# obsidian
+# tmux
+# zoxide
+# zip
+# zathura???
+# yt-dlp
+# youtube-dl
+# yay
+# wofi
+# wl-clipboard??
+# wine
+# waybar
+# vlc
+# virt-manager setup
+# tlp?
+# timeshift
+# tilix?
+# samba??
+# reglector?
+# librewolf
+# rustup
+# qt5ct??
+# qt6ct??
+# qbittorrent
+# p7zip
+# pacutils
+# pamixer
+# pavucontrol?
+# pipewire??
+# print-manager??
+# pulseaudio??
+# python-adblock
+# python-pip
+#
+#
+#
+# mirrors with reflector like the next but with israeli and up to date servers
+# sudo reflector --country Israel --latest 5 --age 2 --sort rate --save /etc/pacman.d/mirrorlist
+

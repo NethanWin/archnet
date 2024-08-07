@@ -1,4 +1,6 @@
 #!/bin/bash
+
+sudo pacman -S git
 #install desktop environments
 options=("hyprland" "kde" "dwm")
 selected=()
@@ -48,13 +50,14 @@ done
 
 install_selected
 
-# just some pkgs
 # utilities
-sudo pacman -S --noconfirm --needed zip unzip reflector upower tldr bluez bluez-utils xclip yt-dlp zoxide fastfetch cups speedtest-cli
+sudo pacman -S --noconfirm --needed zip unzip rar unrar reflector upower tldr bluez bluez-utils xclip yt-dlp zoxide fastfetch cups speedtest-cli calc dash duf feh ffmpeg fish fzf go
 # gui
 sudo pacman -S --noconfirm --needed qutebrowser gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager vlc libreoffice system-config-printer
 # tui
-sudo pacman -S --noconfirm --needed mpv dua-cli btop mc
+sudo pacman -S --noconfirm --needed mpv dua-cli btop mc newsboat
+# background pkgs
+sudo pacman -S --noconfirm --needed usb-modeswitch ttf-jetbrains-mono-nerd
 
 # yay (AUR)
 pacman -S --noconfirm --needed git base-devel
@@ -94,86 +97,4 @@ sudo systemctl --user start syncthing
 
 yay -S bicon-git
 
-# to add:
-# auto usb mount to /run/media/
-# android-tools
-# auto-cpufreq
-# bluetooth setup
-# breeze
-# btop
-# calc
-# cups
-# dash
-# dua-cli
-# duf
-# fastfetch
-# feh
-# ffmpeg
-# fish
-# fzf
-# git
-# go
-# hyprland
-# hyprlock
-# hyprfine
-# hyprpaper
-# imagemagick
-# iwd
-# kdenlive
-# kolourpaint
-# konsole
-# mc
-# ly
-# mc
-# mpv
-# neovim
-# newsboat
-# npm
-# nvidia-driver
-# obsidian
-# tmux
-# zoxide
-# zip
-# zathura???
-# yt-dlp
-# youtube-dl
-# yay
-# wofi
-# wl-clipboard??
-# wine
-# waybar
-# vlc
-# virt-manager setup
-# usb-modeswitch
-# unzip
-# unrar
-# rar
-# ttf-jetbrains-mono-nerd
-# ttf-ubuntu-mono-nerd
-# tlp?
-# timeshift
-# tldr
-# run tldr --update
-# tilix?
-# samba??
-# reglector?
-# qutebrowser
-# librewolf
-# rustup
-# qt5ct??
-# qt6ct??
-# qbittorrent
-# p7zip
-# pacutils
-# pamixer
-# pavucontrol?
-# pipewire??
-# print-manager??
-# pulseaudio??
-# python-adblock
-# python-pip
-#
-#
-#
-# mirrors with reflector like the next but with israeli and up to date servers
-# sudo reflector --country Israel --latest 5 --age 2 --sort rate --save /etc/pacman.d/mirrorlist
+tldr --update
