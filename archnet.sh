@@ -1,5 +1,7 @@
 #!/bin/bash
-bash desktop-enviorment-chooser.sh
+bash etc/desktop-enviorment-chooser.sh
+
+######### pkgs #########
 # utilities
 sudo pacman -S --noconfirm --needed zip unzip rar unrar reflector upower tldr bluez bluez-utils xclip yt-dlp zoxide fastfetch cups speedtest-cli calc dash duf feh ffmpeg fish fzf go starship
 # gui
@@ -27,22 +29,7 @@ rm -rf ~/.config/nvim/.git
 
 # syncthing service
 mkdir -p ~/.config/systemd/user/
-cat <<EOF >~/.config/systemd/user/syncthing.service
-[Unit]
-Description=Syncthing - Open Source Continuous File Synchronization
-Documentation=https://docs.syncthing.net/
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/syncthing -no-browser -no-restart -logflags=0
-Restart=on-failure
-SuccessExitStatus=3 4
-RestartForceExitStatus=3 4
-
-[Install]
-WantedBy=default.target
-EOF
-
+cp etc/syncthing.service ~/.config/systemd/user/syncthing.service
 sudo systemctl --user enable syncthing
 sudo systemctl --user start syncthing
 
