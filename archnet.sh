@@ -34,6 +34,7 @@ sudo systemctl --user enable syncthing
 sudo systemctl --user start syncthing
 
 yay -S bicon-git
+yay -S vimv
 
 tldr --update
 
