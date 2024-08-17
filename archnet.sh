@@ -2,7 +2,7 @@
 sudo pacman -Syyu
 bash etc/desktop-enviorment-chooser.sh
 
-sudo pacman -S noconfirm --needed ly
+sudo pacman -S --noconfirm --needed ly
 sudo systemctl enable ly
 
 ######### pkgs #########
