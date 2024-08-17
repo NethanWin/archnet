@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo pacman -Syyu
-bash etc/desktop-enviorment-chooser.sh
+bash ./scripts/desktop-enviorment-chooser.sh
 
 sudo pacman -S noconfirm --needed ly
 sudo systemctl enable ly
@@ -33,7 +33,7 @@ rm -rf ~/.config/nvim/.git
 
 # syncthing service
 mkdir -p ~/.config/systemd/user/
-cp etc/syncthing.service ~/.config/systemd/user/syncthing.service
+cp ./services/syncthing.service ~/.config/systemd/user/syncthing.service
 sudo systemctl --user enable syncthing
 sudo systemctl --user start syncthing
 
@@ -41,6 +41,7 @@ yay -S bicon-git
 yay -S vimv
 
 tldr --update
+cp -r ./configs/* ~/.config/
 
 # librewolf setup
 # to check wtf
