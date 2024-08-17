@@ -1,5 +1,9 @@
 #!/bin/bash
+sudo pacman -Syyu
 bash etc/desktop-enviorment-chooser.sh
+
+sudo pacman -S noconfirm --needed ly
+sudo systemctl enable ly
 
 ######### pkgs #########
 # utilities
@@ -9,7 +13,7 @@ sudo pacman -S --noconfirm --needed qutebrowser gnome-disk-utility neovim qbitto
 # tui
 sudo pacman -S --noconfirm --needed mpv dua-cli btop mc newsboat
 # background pkgs
-sudo pacman -S --noconfirm --needed usb-modeswitch ttf-jetbrains-mono-nerd
+sudo pacman -S --noconfirm --needed usb_modeswitch ttf-jetbrains-mono-nerd
 
 # yay (AUR)
 pacman -S --noconfirm --needed git base-devel
@@ -34,8 +38,10 @@ sudo systemctl --user enable syncthing
 sudo systemctl --user start syncthing
 
 yay -S bicon-git
+yay -S vimv
 
 tldr --update
 
 # librewolf setup
-sudo rm /usr/share/applications/librewolf.desktop
+# to check wtf
+#sudo rm /usr/share/applications/librewolf.desktop
