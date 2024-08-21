@@ -1,20 +1,18 @@
 #!/bin/bash
-sudo pacman -Syyu
-bash ./scripts/desktop-enviorment-chooser.sh
+#sudo pacman -Syyu
+#bash ./scripts/desktop-enviorment-chooser.sh
 
-sudo pacman -S noconfirm --needed ly
-sudo systemctl enable ly
+#sudo pacman -S noconfirm --needed ly
+#sudo systemctl enable ly
 
 ######### pkgs #########
 # utilities
-sudo pacman -S --noconfirm --needed zip unzip rar unrar reflector upower tldr bluez bluez-utils xclip yt-dlp zoxide fastfetch cups speedtest-cli calc dash duf feh ffmpeg fish fzf go starship
-# gui
-sudo pacman -S --noconfirm --needed qutebrowser gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager vlc libreoffice system-config-printer
-# tui
-sudo pacman -S --noconfirm --needed mpv dua-cli btop mc newsboat
-# background pkgs
-sudo pacman -S --noconfirm --needed usb_modeswitch ttf-jetbrains-mono-nerd
-
+echo "installing base pacman pkgs"
+sudo pacman -S --noconfirm --needed $(<./pkgs/utils)
+sudo pacman -S --noconfirm --needed $(<./pkgs/gui)
+sudo pacman -S --noconfirm --needed $(<./pkgs/tui)
+echo "done-----------------------"
+echo "AUR:"
 # yay (AUR)
 pacman -S --noconfirm --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
