@@ -41,6 +41,7 @@ yay -S vimv
 tldr --update
 cp -r ./configs/* ~/.config/
 
+chsh -s /usr/bin/fish
 # librewolf setup
 # to check wtf
 #sudo rm /usr/share/applications/librewolf.desktop
