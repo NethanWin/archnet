@@ -1,9 +1,9 @@
 #!/bin/bash
-#sudo pacman -Syyu
-#bash ./scripts/desktop-enviorment-chooser.sh
+sudo pacman -Syyu
+bash ./scripts/desktop-enviorment-chooser.sh
 
-#sudo pacman -S noconfirm --needed ly
-#sudo systemctl enable ly
+sudo pacman -S noconfirm --needed ly
+sudo systemctl enable ly
 
 ######### pkgs #########
 # utilities
@@ -32,8 +32,8 @@ rm -rf ~/.config/nvim/.git
 # syncthing service
 mkdir -p ~/.config/systemd/user/
 cp ./services/syncthing.service ~/.config/systemd/user/syncthing.service
-sudo systemctl --user enable syncthing
-sudo systemctl --user start syncthing
+systemctl --user enable syncthing
+systemctl --user start syncthing
 
 yay -S bicon-git
 yay -S vimv
