@@ -1,24 +1,30 @@
 #!/bin/bash
 sudo pacman -Syyu
+
+echo "1 de chooser------------------------------"
 bash ./scripts/desktop-enviorment-chooser.sh
 
-sudo pacman -S noconfirm --needed ly
+echo "2 install pkgs------------------------------"
+sudo pacman -S --noconfirm --needed ly
 sudo systemctl enable ly
 
 ######### pkgs #########
 # utilities
-echo "installing base pacman pkgs"
 sudo pacman -S --noconfirm --needed $(<./pkgs/utils)
 sudo pacman -S --noconfirm --needed $(<./pkgs/gui)
 sudo pacman -S --noconfirm --needed $(<./pkgs/tui)
-echo "done-----------------------"
-echo "AUR:"
+
+echo "3 moving configs------------------------------"
+cp -r ./configs/* ~/.config/
+
+echo "4 setting yay aur-----------------------------"
 # yay (AUR)
-pacman -S --noconfirm --needed git base-devel
+sudo pacman -S --noconfirm --needed base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
+echo "5 lazyvim-----------------------------"
 # lazyvim
 # required
 mv ~/.config/nvim{,.bak}
@@ -29,19 +35,17 @@ mv ~/.cache/nvim{,.bak}
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
+echo "6 syncthing-----------------------------"
 # syncthing service
 mkdir -p ~/.config/systemd/user/
 cp ./services/syncthing.service ~/.config/systemd/user/syncthing.service
 systemctl --user enable syncthing
 systemctl --user start syncthing
 
+echo "7 yay install pkgs wtf-----------------------------"
 yay -S bicon-git
 yay -S vimv
 
+echo "8 final things"
 tldr --update
-cp -r ./configs/* ~/.config/
-
 chsh -s /usr/bin/fish
-# librewolf setup
-# to check wtf
-#sudo rm /usr/share/applications/librewolf.desktop
