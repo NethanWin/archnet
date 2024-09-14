@@ -1,4 +1,7 @@
 #!/bin/bash
+
+#add pacman stuff
+sudo cp -rf ./copy-dirs/etc/* /etc/
 sudo pacman -Syyu
 
 echo "1 de chooser------------------------------"
