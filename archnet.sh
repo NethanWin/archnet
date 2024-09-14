@@ -45,10 +45,15 @@ cp ./services/syncthing.service ~/.config/systemd/user/syncthing.service
 systemctl --user enable syncthing
 systemctl --user start syncthing
 
-echo "7 yay install pkgs wtf-----------------------------"
+echo "7 yay install pkgs-----------------------------"
 yay -S bicon-git
 yay -S vimv
 
-echo "8 final things"
+echo "8 final things-------------------------------------"
 tldr --update
+
+echo "9 fish setup---------------------------------"
+rm -rf ~/.config/fish
+git clone -b dev https://github.com/NethanWin/shellnet ~/.config/fish
+bash ~/.config/fish/install.sh
 chsh -s /usr/bin/fish
