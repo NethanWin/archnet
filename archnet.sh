@@ -54,6 +54,6 @@ tldr --update
 
 echo "9 fish setup---------------------------------"
 rm -rf ~/.config/fish
-git clone -b dev https://github.com/NethanWin/shellnet ~/.config/fish
+git clone https://github.com/NethanWin/shellnet ~/.config/fish
 bash ~/.config/fish/install.sh
 chsh -s /usr/bin/fish
