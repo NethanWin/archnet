@@ -1,26 +1,33 @@
 #!/bin/bash
-sudo pacman -Syyu
-bash etc/desktop-enviorment-chooser.sh
 
+#add pacman stuff
+sudo cp -rf ./copy-dirs/etc/* /etc/
+sudo pacman -Syyu
+
+echo "1 de chooser------------------------------"
+bash ./scripts/desktop-enviorment-chooser.sh
+
+echo "2 install pkgs------------------------------"
 sudo pacman -S --noconfirm --needed ly
 sudo systemctl enable ly
 
 ######### pkgs #########
 # utilities
-sudo pacman -S --noconfirm --needed zip unzip rar unrar reflector upower tldr bluez bluez-utils xclip yt-dlp zoxide fastfetch cups speedtest-cli calc dash duf feh ffmpeg fish fzf go starship
-# gui
-sudo pacman -S --noconfirm --needed qutebrowser gnome-disk-utility neovim qbittorrent syncthing timeshift virt-manager vlc libreoffice system-config-printer
-# tui
-sudo pacman -S --noconfirm --needed mpv dua-cli btop mc newsboat
-# background pkgs
-sudo pacman -S --noconfirm --needed usb_modeswitch ttf-jetbrains-mono-nerd
+sudo pacman -S --noconfirm --needed $(<./pkgs/utils)
+sudo pacman -S --noconfirm --needed $(<./pkgs/gui)
+sudo pacman -S --noconfirm --needed $(<./pkgs/tui)
 
+echo "3 moving configs------------------------------"
+cp -r ./configs/* ~/.config/
+
+echo "4 setting yay aur-----------------------------"
 # yay (AUR)
-pacman -S --noconfirm --needed git base-devel
+sudo pacman -S --noconfirm --needed base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
+echo "5 lazyvim-----------------------------"
 # lazyvim
 # required
 mv ~/.config/nvim{,.bak}
@@ -31,17 +38,22 @@ mv ~/.cache/nvim{,.bak}
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
+echo "6 syncthing-----------------------------"
 # syncthing service
 mkdir -p ~/.config/systemd/user/
-cp etc/syncthing.service ~/.config/systemd/user/syncthing.service
-sudo systemctl --user enable syncthing
-sudo systemctl --user start syncthing
+cp ./services/syncthing.service ~/.config/systemd/user/syncthing.service
+systemctl --user enable syncthing
+systemctl --user start syncthing
 
+echo "7 yay install pkgs-----------------------------"
 yay -S bicon-git
 yay -S vimv
 
+echo "8 final things-------------------------------------"
 tldr --update
 
-# librewolf setup
-# to check wtf
-#sudo rm /usr/share/applications/librewolf.desktop
+echo "9 fish setup---------------------------------"
+rm -rf ~/.config/fish
+git clone https://github.com/NethanWin/shellnet ~/.config/fish
+bash ~/.config/fish/install.sh
+chsh -s /usr/bin/fish
