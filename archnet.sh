@@ -68,3 +68,6 @@ print_headline "9 zsh setup"
 sh -c "$(wget -O- https://install.ohmyz.sh/)"
 cp $UTILS/.zshrc $HOME/.zshrc
 # chsh -s /usr/bin/zsh
+cp -r $UTILS/.oh-my-zsh $HOME/.oh-my-zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
