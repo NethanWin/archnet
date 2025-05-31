@@ -55,9 +55,7 @@ systemctl --user start syncthing
 
 
 print_headline "7 yay install pkgs"
-export RUNZSH=no
 yay -S bicon-git vimv --noconfirm
-export RUNZSH=yes
 
 
 print_headline "8 final things"
@@ -65,7 +63,9 @@ tldr --update
 
 
 print_headline "9 zsh setup"
+export RUNZSH=no
 sh -c "$(wget -O- https://install.ohmyz.sh/)"
+
 cp $UTILS/.zshrc $HOME/.zshrc
 # chsh -s /usr/bin/zsh
 cp -r $UTILS/.oh-my-zsh $HOME/.oh-my-zsh
