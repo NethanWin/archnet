@@ -3,7 +3,7 @@
 UTILS="./utils"
 SCRIPTS="./scripts"
 CONFIG="$HOME/.config"
-COLOR="\e[34m"
+COLOR="\e[33m"
 RESET="\e[0m"
 
 print_headline() 
@@ -66,5 +66,5 @@ tldr --update
 
 print_headline "9 zsh setup"
 sh -c "$(wget -O- https://install.ohmyz.sh/)"
-cp $UTILS/.zshrc ~/.zshrc
-chsh -s /usr/bin/zsh
+cp $UTILS/.zshrc $HOME/.zshrc
+# chsh -s /usr/bin/zsh

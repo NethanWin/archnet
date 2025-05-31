@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo pacman -S git
 #install desktop environments
 options=("hyprland" "kde" "dwm")
 selected=()
