@@ -55,7 +55,9 @@ systemctl --user start syncthing
 
 
 print_headline "7 yay install pkgs"
-yay bicon-git vimv --noconfirm
+export RUNZSH=no
+yay -S bicon-git vimv --noconfirm
+export RUNZSH=yes
 
 
 print_headline "8 final things"
