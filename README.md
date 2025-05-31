@@ -1,5 +1,9 @@
 # ArchNet
-1. install arch (or archinstall)
-2. reboot
-3. install archnet
-test2
+1. Install arch with/without archinstall
+2. Reboot
+3. Run Archnet:
+   ```bash
+   git clone https://github.com/NethanWin/archnet.git
+   cd archnet
+   ./archnet.sh
+   ```
