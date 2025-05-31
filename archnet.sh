@@ -28,9 +28,7 @@ sudo systemctl enable ly
 
 ######### pkgs #########
 # utilities
-sudo pacman -S --noconfirm --needed $(<$UTILS/pkgs/utils)
-sudo pacman -S --noconfirm --needed $(<$UTILS/pkgs/gui)
-sudo pacman -S --noconfirm --needed $(<$UTILS/pkgs/tui)
+sudo pacman -S --noconfirm --needed $(<$UTILS/pkgs/*)
 
 print_headline "3 moving configs"
 cp -r $UTILS/yay $CONFIG
