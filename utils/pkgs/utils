@@ -28,3 +28,6 @@ xclip
 yt-dlp
 zip
 zoxide
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
