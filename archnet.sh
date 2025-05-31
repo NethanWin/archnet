@@ -38,8 +38,10 @@ print_headline "4 setting yay aur"
 # yay (AUR)
 sudo pacman -S --noconfirm --needed base-devel
 git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+pushd yay
+makepkg -si --noconfirm
+popd
+rm -rf yay
 
 
 print_headline "5 kickstart.nvim"
@@ -63,11 +65,11 @@ tldr --update
 
 
 print_headline "9 zsh setup"
-export RUNZSH=no
-sh -c "$(wget -O- https://install.ohmyz.sh/)"
+sh -c "$(wget -O- https://install.ohmyz.sh/)" "" --unattended
 
 cp $UTILS/.zshrc $HOME/.zshrc
-# chsh -s /usr/bin/zsh
 cp -r $UTILS/.oh-my-zsh $HOME/.oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+chsh -s /usr/bin/zsh
