@@ -5,5 +5,5 @@
    ```bash
    git clone https://github.com/NethanWin/archnet.git
    cd archnet
-   ./archnet.sh
+   ./install.sh
    ```
