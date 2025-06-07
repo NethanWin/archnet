@@ -14,7 +14,7 @@ print_headline()
 #add pacman stuff
 print_headline "0 config pacman"
 sudo cp -rf $UTILS/pacman-config/* /etc/
-sudo pacman -Syyu
+sudo pacman -Syyu --noconfirm
 
 
 print_headline "1 de chooser"
@@ -38,7 +38,7 @@ print_headline "4 setting yay aur"
 # yay (AUR)
 #sudo pacman -S --noconfirm --needed base-devel
 git clone https://aur.archlinux.org/yay-bin.git
-pushd yay
+pushd yay-bin
 makepkg -si --noconfirm
 popd
 rm -rf yay
