@@ -36,8 +36,8 @@ cp -r $UTILS/yay $CONFIG
 
 print_headline "4 setting yay aur"
 # yay (AUR)
-sudo pacman -S --noconfirm --needed base-devel
-git clone https://aur.archlinux.org/yay.git
+#sudo pacman -S --noconfirm --needed base-devel
+git clone https://aur.archlinux.org/yay-bin.git
 pushd yay
 makepkg -si --noconfirm
 popd
