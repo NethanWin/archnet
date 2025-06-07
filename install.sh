@@ -41,7 +41,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 pushd yay-bin
 makepkg -si --noconfirm
 popd
-rm -rf yay
+rm -rf yay-bin
 
 
 print_headline "5 kickstart.nvim"
